@@ -9,42 +9,8 @@
 Например, lastDigit([3, 4, 2]) == 1 потому что 3 ^ (4 ^ 2) = 3 ^ 16 = 43046721.
 
 Степенная функция растет быстро. Например, 9 ^ (9 ^ 9) имеет более 369 миллионов цифр. 
-Ваш код должн эффективно работать с такими числами.
-
-Примеры:
-
-
-
 
 """
-
-
-def a_pow_simple_n(array:list):
-	# принимает список числел и возвращает список состоящий из 
-	# изначального первого элемента + простые числа 2,1,0
-	new_array = []
-	new_array.append(array[0])
-
-	for i in range(1, len(array)):
-		n = array[i]
-		while n not in [0,1,2]:
-			if n%2 == 0:
-				new_array.append(2)
-				n //= 2
-			else:
-				new_array.append(1)
-				n -= 1
-		new_array.append(n)
-		
-	return new_array
-
-
-
-
-
-
-
-
 
 
 
@@ -84,37 +50,6 @@ in_list = [12, 30, 31]   # 6
 print(f_a_powx_pown(in_list))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""
-
-
-def f_apowx(array:list):
-	# принимает список 
-	# l=len(array), array[l-1] возводит в степень array[l]
-	# возвращает последнюю цифру результирующего числа
-	
-	if len(array) == 2:
-		return str(array[0]**array[-1])[-1]
-	else:
-		array[-2] = array[-2] ** array[-1]
-		return f_apowx(array[:len(array)-1])
-
-"""
 
 
 
