@@ -27,7 +27,11 @@ def f_a_powx_pown(array:list):
 		return (array[0] ** array[1]) % 10
 
 	else:
-		array[-2] = (array[-2] ** array[-1]) % 100
+		array[-2] = (array[-2] ** array[-1])
+
+		while array[-2] % 1000 == 0:
+			array[-2] = int(str( array[-2] )[:-1])
+		array[-2] = array[-2] % 1000
 		return f_a_powx_pown(array[:len(array) - 1])
 
 
@@ -48,6 +52,27 @@ in_list = [12, 30, 31]   # 6
 
 
 print(f_a_powx_pown(in_list))
+
+
+
+
+
+'''
+>>> 12**7
+35831808
+>>> 12**6176733962839470000000000000000000000000000000
+
+
+
+a = 6176733962839470000000000000000000000000000000
+
+while a % 1000 == 0:
+	a = int(str(a)[:-1])
+print(a%1000)
+
+
+
+'''
 
 
 
